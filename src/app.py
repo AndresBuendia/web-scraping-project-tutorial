@@ -105,7 +105,8 @@ plt.show()
 
 # 3. Cambios anuales en los ingresos
 plt.figure(figsize=(10, 6))
-sns.barplot(x='Fiscal Year End', y='Change', data=df, palette='viridis')
+sns.barplot(x='Fiscal Year End', y='Change', data=df, palette='viridis',
+            order=sorted(df['Fiscal Year End'].unique()))  # Para que el orden sea ascendente (En los gráficos de barras hay que especificarlo)
 plt.title('Cambios Anuales en los Ingresos de Tesla (2007-2023)')
 plt.xlabel('Año')
 plt.ylabel('Cambio en los Ingresos (en miles de millones)')
